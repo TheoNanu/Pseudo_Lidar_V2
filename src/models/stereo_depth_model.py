@@ -112,6 +112,7 @@ class SDNet(nn.Module):
         x: [B, C, D, H, W] (im2)
         flo: [B, 2, H, W] flow
         """
+        print(f"Calibration: {calib}")
         # B,C,D,H,W to B,H,W,C,D
         x = x.transpose(1, 3).transpose(2, 4)
         B, H, W, C, D = x.size()
